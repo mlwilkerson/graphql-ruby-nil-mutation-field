@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'mutation { doFoo }', type: :request do
+RSpec.describe 'mutation { doBar }', type: :request do
   let(:context) { { } }
   let(:variables) { { } }
 
@@ -18,18 +18,19 @@ RSpec.describe 'mutation { doFoo }', type: :request do
     res
   }
 
-  context "doFoo" do
+  context "doBar" do
     let(:query_string) {%|
         mutation {
-          doFoo {
-            processId
+          doBar {
+            item {
+              title
+            }
           }
         }
       |}
 
     it 'works' do
-      puts "DEBUG: spec gets: #{result.inspect}"
-      expect(result['data']['doFoo']['processId']).to eq "foo done"
+      expect(result['data']['doBar']['item']['title']).to eq "bar title"
     end
 
   end
