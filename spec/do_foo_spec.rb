@@ -33,19 +33,4 @@ RSpec.describe 'Mutations', type: :request do
     end
 
   end
-
-#  context "doBar" do
-#    let(:query_string) {%|
-#        mutation {
-#          doBar {
-#            processId
-#          }
-#        }
-#      |}
-#
-#    it 'works' do
-#      expect(result['data']['doFoo']['processId']).to eq "foo done"
-#    end
-#
-#  end
 end
