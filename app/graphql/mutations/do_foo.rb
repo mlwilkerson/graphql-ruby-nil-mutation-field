@@ -9,5 +9,6 @@ class Mutations::DoFoo < GraphQL::Schema::Mutation
     }
 
     puts "DEBUG: DooFoo.resolve wants to return this: #{result.inspect}"
+    result
   end
 end
