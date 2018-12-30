@@ -23,14 +23,23 @@ RSpec.describe 'mutation { doFoo }', type: :request do
         mutation {
           doFoo {
             processId
+            numOne
+            someId
           }
         }
       |}
 
-    it 'works' do
+    it 'resolves processId' do
       puts "DEBUG: spec gets: #{result.inspect}"
       expect(result['data']['doFoo']['processId']).to eq "foo done"
     end
 
+    it 'resolves numOne' do
+      expect(result['data']['doFoo']['numOne']).to eq 42
+    end
+
+    it 'resolves someId' do
+      expect(result['data']['doFoo']['someId']).to eq "abc123"
+    end
   end
 end
